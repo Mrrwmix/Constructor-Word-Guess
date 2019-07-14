@@ -2,7 +2,10 @@ function Letter(char){
     this.char = char,
     this.guessed = false;
     this.revealOrHide = function(){
-        if (this.guessed == false){
+        if (this.char == ' '){
+            return this.char;
+        }
+        else if (this.guessed == false){
             return '_';
         }
         else {
@@ -10,12 +13,11 @@ function Letter(char){
         }
     },
     this.checkMe = function(checkIt){
-        if (checkIt == this.char){
+        if (checkIt.toLowerCase() == this.char.toLowerCase()){
             this.guessed = true;
-            this.revealOrHide();
         }
     }
 }
 
 
-export {Letter};
+module.exports = Letter;

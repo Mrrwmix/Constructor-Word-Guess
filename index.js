@@ -33,7 +33,6 @@ function playGame(theWord) {
             var oldWord = theWord.constructz();
             theWord.checkLetters(answer.letter);
             theWord.constructz();
-            console.log('                        ' + theWord.constructz());
             if (oldWord == theWord.constructz()) {
                 lives--;
                 console.log("Incorrect!");
@@ -48,6 +47,7 @@ function playGame(theWord) {
                 console.log("Correct!");
 
                 if (!theWord.constructz().includes('_')) {
+                    console.log('                        ' + theWord.constructz());
                     console.log("You've won!");
                     wordNotFinished = false;
                     return endGame();

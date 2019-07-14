@@ -9,7 +9,7 @@ function Word(wordToGuess){
     this.constructz = function(){
         var stringy = '';
         for (y in this.wordToGuess){
-            stringy = stringy.concat(this.wordToGuess[y].revealOrHide());
+            stringy = stringy.concat(this.wordToGuess[y].revealOrHide()) + ' ';
         }
         return stringy;
     };

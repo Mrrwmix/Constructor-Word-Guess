@@ -1,11 +1,4 @@
 var Letter = require("./Letter");
-console.log(Letter);
-
-var a = new Letter('a');
-
-console.log(a.checkMe('a'));
-console.log(a.guessed);
-console.log(a.revealOrHide());
 
 function Word(wordToGuess){
     this.wordToGuess = [];
@@ -20,9 +13,11 @@ function Word(wordToGuess){
         }
         return stringy;
     };
-    
+    this.checkLetters = function(letter){
+        for (x in this.wordToGuess){
+            this.wordToGuess[x].checkMe(letter);
+        }
+    }
 }
 
-var guessThis = new Word('1 2 3');
-
-console.log(guessThis.constructz())
+module.exports = Word;
